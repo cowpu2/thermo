@@ -2,7 +2,7 @@ import time
 import datetime
 # noinspection PyUnresolvedReferences
 import RPi.GPIO as GPIO
-import urllib2
+# import urllib2
 
 # Identify which pin controls the relay
 heat_pin = 13  # controls heat lamp and heat_fan
@@ -115,11 +115,11 @@ def datalogger():  # Bring in relay status here
     logfile.write(logfilestring)
     # print(logfilestring)
     logfile.close()
-    TempF = read_temp()
-    baseURL = 'https://api.thingspeak.com/update?api_key=QLWZLZSEQPTX3VNJ'
-    tspeak = urllib2.urlopen(baseURL + "&field1=%s&field2=%s&field3=%s" % (TempF, heat_status, vent_status))
-    print(tspeak.read())
-    tspeak.close()
+    # TempF = read_temp()
+    # baseURL = 'https://api.thingspeak.com/update?api_key=QLWZLZSEQPTX3VNJ'
+    # tspeak = urllib2.urlopen(baseURL + "&field1=%s&field2=%s&field3=%s" % (TempF, heat_status, vent_status))
+    # print(tspeak.read())
+    # tspeak.close()
 
     return logfilestring
 
@@ -131,4 +131,4 @@ while True:
     vent_fan_control()
     datalogger()
     print(datalogger())
-    time.sleep(60)
+    time.sleep(5)
