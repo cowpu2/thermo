@@ -123,12 +123,16 @@ def datalogger():  # Bring in relay status here
 
     return logfilestring
 
-
-while True:
-    # print(read_temp())
-    GPIOsetup()
-    heat_fan_control()
-    vent_fan_control()
-    datalogger()
-    print(datalogger())
-    time.sleep(5)
+try:
+    while True:
+        # print(read_temp())
+        GPIOsetup()
+        heat_fan_control()
+        vent_fan_control()
+        datalogger()
+        print(datalogger())
+        time.sleep(5)
+except KeyboardInterrupt:
+    print('keyboard interrupted')
+finally:
+    GPIO.cleanup()
