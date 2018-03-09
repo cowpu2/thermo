@@ -8,10 +8,15 @@
       <w>logfilestring</w>
       <w>logstampdate</w>
       <w>logstamptime</w>
+      <w>onboard</w>
       <w>osetup</w>
+      <w>popen</w>
       <w>qlwzlzseqptx</w>
+      <w>readline</w>
+      <w>thermsensor</w>
       <w>thingspeak</w>
       <w>tspeak</w>
+      <w>vcgencmd</w>
     </words>
   </dictionary>
 </component>
